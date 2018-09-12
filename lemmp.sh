@@ -182,15 +182,13 @@ function MariaDB(){
 
 	function mariadb_install(){
 		
-		debconf-set-selections <<< "mariadb-server mysql-server/root_password password root"
+		sudo debconf-set-selections <<< "mariadb-server mysql-server/root_password password root"
 
-		debconf-set-selections <<< "mariadb-server mysql-server/root_password_again password root" 
+		sudo debconf-set-selections <<< "mariadb-server mysql-server/root_password_again password root" 
 
 		#Installing MariaDB
 		sudo DEBIAN_FRONTEND=noninteractive apt-get -y install mariadb-server-10.1 mariadb-client
 		sudo apt-get -y install mariadb-server-10.1 mariadb-client
-		#Use this for python connector
-		#sudo apt-get install -y mariadb-server python-mysqldb
 
 	}
 
@@ -252,16 +250,16 @@ function package(){
 		elif [ "$opt" = "NGINX" ]; then
 			nginx
 		exit
-	    elif [ "$opt" = "MySql" ]; then
-	    	MySql
-	    exit
-	    elif [ "$opt" = "MariaDB" ]; then
-	    	MariaDB
-	    exit
+	    	elif [ "$opt" = "MySql" ]; then
+	    		MySql
+	    	exit
+	    	elif [ "$opt" = "MariaDB" ]; then
+	    		MariaDB
+	    	exit
 		elif [ "$opt" = "All" ]; then
 			php7
 			nginx
-	    	MariaDB
+	    		MariaDB
 	    exit
 	    elif [ "$opt" = "Exit" ]; then
 	    	echo "---------------------------"
@@ -270,7 +268,7 @@ function package(){
 	    exit
 		else
 			echo "---------------------------------------"
-		    echo "bad option please select 1, 2, 3 or 4"
+		    echo "bad option please select 1, 2, 3, 4 or 5"
 		    echo "---------------------------------------"
 		fi
 	done
