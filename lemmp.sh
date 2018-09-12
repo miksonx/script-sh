@@ -67,7 +67,7 @@ function php7(){
 		apt-get update && apt-get -y upgrade -y
 		sudo apt-get install -y php7.2 php7.2-cli php7.2-common php7.2-json php7.2-opcache \
 							php7.2-mysql php7.2-mbstring php7.2-zip php7.2-fpm \
-							php7.2-curl php7.2-gd php7.2-intl php7.2-xsl
+							php7.2-curl php7.2-gd php7.2-intl php7.2-xsl php7.2-xml
 		  	echo "----------------------------------------------"
 		    echo "php is successfully installed on this machine"
 		    php -r \@phpinfo\(\)\; | grep 'PHP Version' -m 1
