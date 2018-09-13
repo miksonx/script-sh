@@ -242,7 +242,7 @@ function package(){
 	    echo "------------------------------------"
 	    echo "Which package do you want to install"
 		echo "------------------------------------"
-	   	OPTIONS="PHP NGINX MySql MariaDB All Exit"
+	   	OPTIONS="PHP NGINX MySql MariaDB All(PHP NGINX MariaDB) Exit"
 		select opt in $OPTIONS; do
 	    if [ "$opt" = "PHP" ]; then
 		    php7
